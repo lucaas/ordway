@@ -1,5 +1,7 @@
 # Ordway
 
+This version includes iconik/backlight changes
+
 [![PyPi Version](https://img.shields.io/pypi/v/ordway.svg)](https://pypi.org/project/ordway)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/ordway.svg)](https://pypi.org/project/ordway)
 [![MIT License](https://img.shields.io/pypi/l/ordway)](https://raw.githubusercontent.com/efnineio/ordway/v0.4.0/LICENSE)
