@@ -25,7 +25,7 @@ class OrdwayClient:  # pylint: disable=too-many-instance-attributes
         company: str,
         user_token: str,
         api_version: str = "1",
-        staging: bool = False,
+        sandbox: bool = False,
         proxies: Optional[Dict[str, str]] = None,
         headers: Optional[Dict[str, str]] = None,
         session: Optional["Session"] = None,
@@ -47,26 +47,26 @@ class OrdwayClient:  # pylint: disable=too-many-instance-attributes
         self.api_version = api_version
 
         # Interfaces
-        self.products = api.Products(self, staging=staging)
-        self.customers = api.Customers(self, staging=staging)
-        self.subscriptions = api.Subscriptions(self, staging=staging)
-        self.invoices = api.Invoices(self, staging=staging)
-        self.payments = api.Payments(self, staging=staging)
-        self.credits = api.Credits(self, staging=staging)
-        self.plans = api.Plans(self, staging=staging)
-        self.refunds = api.Refunds(self, staging=staging)
-        self.webhooks = api.Webhooks(self, staging=staging)
-        self.journal_entries = api.JournalEntries(self, staging=staging)
-        self.payment_runs = api.PaymentRuns(self, staging=staging)
-        self.statements = api.Statements(self, staging=staging)
-        self.coupons = api.Coupons(self, staging=staging)
-        self.orders = api.Orders(self, staging=staging)
-        self.usages = api.Usages(self, staging=staging)
-        self.billing_runs = api.BillingRuns(self, staging=staging)
-        self.revenue_schedules = api.RevenueSchedules(self, staging=staging)
-        self.billing_schedules = api.BillingSchedules(self, staging=staging)
-        self.revenue_rules = api.RevenueRules(self, staging=staging)
-        self.chart_of_accounts = api.ChartOfAccounts(self, staging=staging)
+        self.products = api.Products(self, sandbox=sandbox)
+        self.customers = api.Customers(self, sandbox=sandbox)
+        self.subscriptions = api.Subscriptions(self, sandbox=sandbox)
+        self.invoices = api.Invoices(self, sandbox=sandbox)
+        self.payments = api.Payments(self, sandbox=sandbox)
+        self.credits = api.Credits(self, sandbox=sandbox)
+        self.plans = api.Plans(self, sandbox=sandbox)
+        self.refunds = api.Refunds(self, sandbox=sandbox)
+        self.webhooks = api.Webhooks(self, sandbox=sandbox)
+        self.journal_entries = api.JournalEntries(self, sandbox=sandbox)
+        self.payment_runs = api.PaymentRuns(self, sandbox=sandbox)
+        self.statements = api.Statements(self, sandbox=sandbox)
+        self.coupons = api.Coupons(self, sandbox=sandbox)
+        self.orders = api.Orders(self, sandbox=sandbox)
+        self.usages = api.Usages(self, sandbox=sandbox)
+        self.billing_runs = api.BillingRuns(self, sandbox=sandbox)
+        self.revenue_schedules = api.RevenueSchedules(self, sandbox=sandbox)
+        self.billing_schedules = api.BillingSchedules(self, sandbox=sandbox)
+        self.revenue_rules = api.RevenueRules(self, sandbox=sandbox)
+        self.chart_of_accounts = api.ChartOfAccounts(self, sandbox=sandbox)
 
     @property
     def api_version(self):

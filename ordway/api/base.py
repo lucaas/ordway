@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING, Optional, List, Dict, Any, Generator, Union, Tuple
 from logging import getLogger
 from requests.exceptions import RequestException
-from ordway.consts import API_ENDPOINT_BASE, STAGING_ENDPOINT_BASE
+from ordway.consts import API_ENDPOINT_BASE, SANDBOX_ENDPOINT_BASE
 from ordway.utils import transform_datetimes
 
 from .exceptions import OrdwayAPIRequestException, OrdwayAPIException
@@ -17,10 +17,10 @@ _Response = Union[List[Dict[str, Any]], Dict[str, Any]]
 class APIBase:
     collection: str
 
-    def __init__(self, client: "OrdwayClient", staging: bool = False):
+    def __init__(self, client: "OrdwayClient", sandbox: bool = False):
         self.client = client
         self.session = client.session
-        self.staging = staging
+        self.sandbox = sandbox
 
     def _construct_headers(self) -> Dict[str, str]:
         """ Returns a dictionary of headers Ordway always expects for API requests. """
@@ -42,8 +42,8 @@ class APIBase:
         data: Optional[Dict[str, Any]] = None,
         json: Optional[Dict[str, Any]] = None,
     ) -> _Response:
-        if self.staging:
-            base = STAGING_ENDPOINT_BASE
+        if self.sandbox:
+            base = SANDBOX_ENDPOINT_BASE
         else:
             base = API_ENDPOINT_BASE
 
